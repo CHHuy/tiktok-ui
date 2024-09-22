@@ -21,6 +21,12 @@
 
 .logo {
 }
+
+.search-result,
+.search {
+    width: 360px;
+}
+
 .search {
     position: relative;
     width: 360px;
@@ -61,6 +67,16 @@
         background-color: rgba(22, 24, 35, 0.12);
     }
 }
+
+.search-title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    line-height: 18px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+
 .clear,
 .loading {
     position: absolute;
