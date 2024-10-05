@@ -12,6 +12,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     user-select: none;
+    color: var(--text-color);
 
     + .wrapper {
         margin-left: 8px;
@@ -26,6 +27,13 @@
 .icon + .title,
 .title + .icon {
     margin-left: 8px;
+}
+
+.icon {
+    width: 16px;
+}
+.title {
+    text-wrap: nowrap;
 }
 
 // Button styles

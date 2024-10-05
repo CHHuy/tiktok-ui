@@ -8,8 +8,25 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon="fa-solid fa-earth-asia" />,
+        title: 'English',
+    },
+    {
+        icon: <FontAwesomeIcon icon="fa-regular fa-circle-question" />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon="fa-regular fa-keyboard" />,
+        title: 'Keyboard shortcuts',
+    },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -30,14 +47,14 @@ function Header() {
                     visible={searchResult.length > 0}
                     interactive={true}
                     render={(attrs) => (
-                        <PopperWrapper>
-                            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
-                            </div>
-                        </PopperWrapper>
+                            </PopperWrapper>
+                        </div>
                     )}
                 >
                     <div className={cx('search')}>
@@ -54,6 +71,12 @@ function Header() {
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
+
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon="fa-solid fa-ellipsis-vertical" />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
