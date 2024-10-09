@@ -14,12 +14,10 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    padding: var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.logo {
 }
 
 .search-result,
@@ -99,6 +97,7 @@
     padding: 4px 8px;
     margin-left: 28px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 // Menu
