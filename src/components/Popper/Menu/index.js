@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
+// Tips: set empty function bypass onChange error
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
