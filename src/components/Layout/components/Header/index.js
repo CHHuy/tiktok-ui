@@ -11,18 +11,19 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
-import MenuItem from '~/components/Popper/Menu/MenuItem';
+import { CreatorTools, DarkMode, GetCoins, InboxIcon, Language, MessagesIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon="fa-regular fa-circle-play" />,
+        icon: <CreatorTools />,
         title: 'Creator tools',
         to: '/creatortools',
     },
     {
-        icon: <FontAwesomeIcon icon="fa-solid fa-earth-asia" />,
+        icon: <Language />,
         title: 'English',
         children: {
             title: 'Language',
@@ -38,7 +39,7 @@ const MENU_ITEMS = [
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon="fa-solid fa-moon" />,
+        icon: <DarkMode />,
         title: 'Dark mode',
     },
 ];
@@ -54,7 +55,7 @@ function Header() {
     }, []);
 
     // Handle logic
-    const handleChange = (menuItem) => {
+    const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
                 // Handle change language
@@ -70,7 +71,7 @@ function Header() {
             to: '/profile',
         },
         {
-            icon: <FontAwesomeIcon icon="fa-solid fa-coins" />,
+            icon: <GetCoins />,
             title: 'Get Coins',
             to: '/getcoin',
         },
@@ -125,15 +126,17 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button text>Upload</Button>
+                            <Button text leftIcon={<FontAwesomeIcon icon="fa-solid fa-plus" />}>
+                                Upload
+                            </Button>
                             <Tippy delay={[0, 200]} content="Messages">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon="fa-regular fa-paper-plane" />
+                                    <MessagesIcon></MessagesIcon>
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Inbox">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon="fa-regular fa-message" />
+                                    <InboxIcon></InboxIcon>
                                 </button>
                             </Tippy>
                         </>
@@ -142,13 +145,13 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-                    <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleChange}>
+                    <Menu items={currentUser ? USER_MENU : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/1d13ff4390ddbd0c1f2bb17e2d99996c.jpeg?lk3s=a5d48078&nonce=26224&refresh_token=85208037f8ee3d7792a72dd5011e434c&x-expires=1728835200&x-signature=rgkt1sfYG%2F4egx1wclewDOzDBbo%3D&shp=a5d48078&shcp=81f88b70"
                                 className={cx('user-avatar')}
-                                alt=""
-                            ></img>
+                                alt="User Menu"
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon="fa-solid fa-ellipsis-vertical" />
