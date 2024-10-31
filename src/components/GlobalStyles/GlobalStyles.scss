@@ -6,6 +6,7 @@
     --white: #fff;
     --text-color: #333;
     // Default layout
+    --font-family: 'TikTokFont', sans-serif;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
@@ -22,7 +23,7 @@ html {
 }
 
 body {
-    font-family: 'TikTokFont', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     // At 62.5%, 1.6rem translates to 16px (1.6 times the size of the root font)
     // If root font size at 100%, 1rem = 16px
