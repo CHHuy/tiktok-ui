@@ -5,8 +5,8 @@
     }
 }
 
-.menu-popper {
-    padding-bottom: 8px;
+.menu-body {
+    overflow-y: auto;
 }
 
 // Menu item
@@ -20,7 +20,7 @@
         border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
     &:hover {
-        background: rgba(22, 24, 35, 0.03);
+        background: rgba(22, 24, 35, 0.06);
     }
 }
 
@@ -29,6 +29,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 .back-btn {
     width: 50px;
