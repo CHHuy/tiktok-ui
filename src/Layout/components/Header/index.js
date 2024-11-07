@@ -11,7 +11,7 @@ import Menu from '~/components/Popper/Menu';
 import { CreatorTools, DarkMode, GetCoins, InboxIcon, Language, MessagesIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -88,7 +88,7 @@ function Header() {
                 {/* Logo */}
 
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home}>
+                    <Link to={config.routes.home}>
                         <img src={images.logo} alt="Tiktok" />
                     </Link>
                 </div>
