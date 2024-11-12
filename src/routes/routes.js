@@ -2,12 +2,12 @@
 import { HeaderOnly } from '~/Layout';
 
 // Pages
-import Home from '~/pages/Home';
+import config from '~/config';
 import Following from '~/pages/Following';
-import Upload from '~/pages/Upload';
+import Home from '~/pages/Home';
 import Profile from '~/pages/Profile';
 import Search from '~/pages/Search';
-import config from '~/config';
+import Upload from '~/pages/Upload';
 
 // Public routes
 const publicRoutes = [
@@ -20,4 +20,4 @@ const publicRoutes = [
 
 const privateRoutes = [];
 
-export { publicRoutes, privateRoutes };
+export { privateRoutes, publicRoutes };

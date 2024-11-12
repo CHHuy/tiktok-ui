@@ -1,17 +1,17 @@
-import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import 'tippy.js/dist/tippy.css';
 
-import Button from '~/components/Button';
-import styles from './Header.module.scss';
 import images from '~/assets/images';
-import Menu from '~/components/Popper/Menu';
+import Button from '~/components/Button';
 import { CreatorTools, DarkMode, GetCoins, InboxIcon, Language, MessagesIcon } from '~/components/Icons';
 import Image from '~/components/Image';
-import Search from '../Search';
+import Menu from '~/components/Popper/Menu';
 import config from '~/config';
+import Search from '../Search';
+import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 

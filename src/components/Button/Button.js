@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 

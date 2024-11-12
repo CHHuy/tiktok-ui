@@ -1,23 +1,23 @@
-import { useEffect, useState, useRef } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
+import { useEffect, useRef, useState } from 'react';
 
-import * as searchServices from '~/services/searchService';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import styles from './Search.module.scss';
+import AccountItem from '~/components/AccountItem';
+import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
+import * as searchServices from '~/services/searchService';
+import styles from './Search.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const searchDebounced = useDebounce(searchValue, 600);
+    const debouncedValue = useDebounce(searchValue, 600);
 
     const inputRef = useRef();
 
@@ -27,7 +27,7 @@ function Search() {
     //     }, 0);
     // }, []);
     useEffect(() => {
-        if (!searchDebounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -35,14 +35,14 @@ function Search() {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.search(searchDebounced);
+            const result = await searchServices.search(debouncedValue);
 
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchApi();
-    }, [searchDebounced]);
+    }, [debouncedValue]);
 
     const handleClear = () => {
         setSearchValue('');
