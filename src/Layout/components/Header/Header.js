@@ -6,7 +6,14 @@ import 'tippy.js/dist/tippy.css';
 
 import images from '~/assets/images';
 import Button from '~/components/Button';
-import { CreatorTools, DarkMode, GetCoins, InboxIcon, Language, MessagesIcon } from '~/components/Icons';
+import {
+    CreatorToolsIcon,
+    DarkModeIcon,
+    GetCoinsIcon,
+    InboxIcon,
+    LanguageIcon,
+    MessagesIcon,
+} from '~/components/Icons';
 import Image from '~/components/Image';
 import Menu from '~/components/Popper/Menu';
 import config from '~/config';
@@ -17,12 +24,12 @@ const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <CreatorTools />,
+        icon: <CreatorToolsIcon />,
         title: 'Creator tools',
         to: '/creatortools',
     },
     {
-        icon: <Language />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -38,7 +45,7 @@ const MENU_ITEMS = [
         to: '/feedback',
     },
     {
-        icon: <DarkMode />,
+        icon: <DarkModeIcon />,
         title: 'Dark mode',
     },
 ];
@@ -63,7 +70,7 @@ function Header() {
             to: '/profile',
         },
         {
-            icon: <GetCoins />,
+            icon: <GetCoinsIcon />,
             title: 'Get Coins',
             to: '/getcoin',
         },
@@ -99,11 +106,6 @@ function Header() {
                             <Button text leftIcon={<FontAwesomeIcon icon="fa-solid fa-plus" />}>
                                 Upload
                             </Button>
-                            <Tippy delay={[0, 200]} content="Messages">
-                                <button className={cx('action-btn')}>
-                                    <MessagesIcon></MessagesIcon>
-                                </button>
-                            </Tippy>
                             <Tippy delay={[0, 200]} content="Inbox">
                                 <button className={cx('action-btn')}>
                                     <InboxIcon />
