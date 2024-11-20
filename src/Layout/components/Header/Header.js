@@ -6,14 +6,7 @@ import 'tippy.js/dist/tippy.css';
 
 import images from '~/assets/images';
 import Button from '~/components/Button';
-import {
-    CreatorToolsIcon,
-    DarkModeIcon,
-    GetCoinsIcon,
-    InboxIcon,
-    LanguageIcon,
-    MessagesIcon,
-} from '~/components/Icons';
+import { CreatorToolsIcon, DarkModeIcon, GetCoinsIcon, InboxIcon, LanguageIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Menu from '~/components/Popper/Menu';
 import config from '~/config';

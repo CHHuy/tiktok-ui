@@ -13,6 +13,7 @@ import {
     MessagesIcon,
 } from '~/components/Icons';
 import Image from '~/components/Image';
+import SuggestedAccounts from '~/components/SuggestedAccounts';
 import config from '~/config';
 import Menu, { MenuItem } from './Menu';
 import styles from './Sidebar.module.scss';
@@ -64,6 +65,9 @@ function Sidebar() {
                     icon={<Image src="" className={cx('user-avatar')} alt="User Menu" />}
                 ></MenuItem>
             </Menu>
+
+            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts label="Following accounts" />
         </aside>
     );
 }
